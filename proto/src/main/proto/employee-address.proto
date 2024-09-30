@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.employeeorg.employeeaddress";
+
+message GetEmployeeAddressRequest{
+    int32 emp_id = 1;
+}
+
+message GetEmployeeAddressResponse{
+    int32 emp_id = 1;
+    string emp_address = 2;
+}
+
+service AddressService{
+    rpc GetEmployeeAddress(GetEmployeeAddressRequest) returns (GetEmployeeAddressResponse);
+}
